@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" routerLink="home">AiShop</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link"routerLink="home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Category
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Man</a>
+          <a class="dropdown-item" href="#">Woman</a>
+          <a class="dropdown-item" href="#">Kids</a>
+        </div>
+      </div>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success mr-sm-2" type="submit" *ngIf="!this.userService.isLogin"
+      routerLink="signup">Sign up</button>
+      <button class="btn btn-primary my-2 my-sm-0" type="submit" *ngIf="!this.userService.isLogin"
+        routerLink="signin">Sign In</button>
+
+      <a class="nav-link" routerLink="cart" *ngIf="this.userService.isLogin">
+        <i class="fa fa-shopping-cart fa-lg">()</i>
+      </a>
+      <a *ngIf="this.userService.isLogin" class="nav-link" [routerLink]="['/profile/detail']">
+        <i class="fa fa-user-circle fa-lg"></i>
+      </a>
+      <a *ngIf="this.userService.isLogin" (click)="logout()" class="nav-link btn btn-danger">Logout</a>
+    </form>
+  </div>
+</nav>

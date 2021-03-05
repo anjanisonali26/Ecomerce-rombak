@@ -1,0 +1,27 @@
+<section class="signin">
+  <div class="container">
+    <div class="signin-content">
+      <div class="signin-form">
+        <h2 class="form-title">Sign in</h2>
+        <form  [formGroup]="signInForm" (ngSubmit)="loginUser()" class="login-form" id="login-form">
+          <div class="form-group">
+            <label for="email"><i class="zmdi zmdi-email"></i></label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" formControlName="email"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" minlength="6"
+              maxLength="20" formControlName="password" required />
+          </div>
+          <div class="form-group form-button">
+            <input type="submit" name="signin" id="signin" class="form-submit" value="login" />
+          </div>
+        </form>
+      </div>
+      <div class="signin-image">
+        <figure><img src="../../assets/images/online-shopping.png" alt="sing up image"></figure>
+      </div>
+    </div>
+  </div>
+</section>
